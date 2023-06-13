@@ -92,7 +92,7 @@ U zaključku, generisanje slika u PHP-u pruža programerima moćne alate za krea
 Univerzitet u Istočnom Sarajevu, 
 Pedagoški fakultet, Bijeljina, 2023.
   
-Mentor: Prof. dr Predrag Katanić
+Mentor: Prof. dr Predrag Katanić.
 Student: Marko Ivanović
 
 
