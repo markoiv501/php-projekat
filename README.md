@@ -14,7 +14,7 @@ KONCEPT:
 
 .
 
-1. UVOD
+1.UVOD
 
 Generisanje slika je važan aspekt u razvoju web aplikacija i sistemima za obradu slika. PHP je popularan jezik za server-side razvoj koji pruža moćne funkcionalnosti za generisanje, modifikovanje i manipulaciju slikama. U ovom seminarskom radu ćemo istražiti pet primjera generisanja slika u PHP programu. Svaki primjer će demonstrirati različite tehnike za kreiranje i obradu slika koristeći ugrađene funkcije i biblioteke koje su dostupne u PHP-u. Kroz ove primjere, upoznaćemo se sa osnovnim konceptima generisanja slika, promjenom njihovih dimenzija, rotacijom, primjenom filtera i kombinovanjem slika. Saznaćemo kako PHP omogućava programerima da dinamički generišu slike i pružaju ih korisnicima ili ih koriste u različite svrhe kao što su prikaz na web stranicama ili kreiranje vizuelnih elemenata u aplikacijama. Uz pomoć ovih primjera, steći ćemo temeljno razumijevanje generisanja slika u PHP-u i njihove primjene u realnim scenarijima.
 
@@ -31,7 +31,7 @@ Kroz ove primjere, istražićemo različite aspekte generisanja i obrade slika u
 
 2. GENERISANJE PRAZNE SLIKE
 
-U ovom primjeru (slika 1), koristimo ugrađene funkcije PHP-a za generisanje i prikazivanje jednostavne slike. Prvo definišemo željenu širinu i visinu slike, nakon čega koristimo funkciju imagecreatetruecolor() za kreiranje prazne slike sa zadatim dimenzijama. Zatim postavljamo boju pozadine pomoću funkcije imagecolorallocate(), koja prihvata RGB vrijednosti boje. U ovom slučaju, postavljamo crvenu boju pozadine. Nakon toga, koristimo funkciju imagefill() da popunimo pozadinu slike sa definisanom bojom.
+U ovom primjeru (primjer_1), koristimo ugrađene funkcije PHP-a za generisanje i prikazivanje jednostavne slike. Prvo definišemo željenu širinu i visinu slike, nakon čega koristimo funkciju imagecreatetruecolor() za kreiranje prazne slike sa zadatim dimenzijama. Zatim postavljamo boju pozadine pomoću funkcije imagecolorallocate(), koja prihvata RGB vrijednosti boje. U ovom slučaju, postavljamo crvenu boju pozadine. Nakon toga, koristimo funkciju imagefill() da popunimo pozadinu slike sa definisanom bojom.
 
 Da bismo prikazali sliku u internet pretraživaču, postavljamo zaglavlje HTTP odgovora koristeći funkciju header(). U ovom slučaju, postavljamo tip slike na image/png kako bismo prikazali sliku u PNG formatu. Konačno, koristimo funkciju imagepng() za ispisivanje slike kao PNG datoteke na izlaz. Na kraju, oslobađamo resurse koje smo koristili pomoću funkcije imagedestroy().
 Ovaj primjer ilustruje osnovne korake za generisanje i prikazivanje slika u PHP-u. Može se prilagoditi za kreiranje slika različitih dimenzija i boja pozadine, omogućavajući programerima da dinamički generišu slike koje odgovaraju specifičnim zahtjevima aplikacija.
@@ -40,7 +40,7 @@ Ovaj primjer ilustruje osnovne korake za generisanje i prikazivanje slika u PHP-
 
 3. SMANJIVANJE SLIKE KORISTEĆI RESAMPLING TEHNIKU
 
-U drugom primjeru (slika 2), istražujemo kako smanjiti veličinu slike koristeći resampling tehniku u PHP-u. Prvo, definišemo putanju do originalne slike koju želimo smanjiti. Zatim koristimo funkciju imagecreatefromjpeg() da učitamo originalnu sliku u memoriju.
+U drugom primjeru (primjer_2), istražujemo kako smanjiti veličinu slike koristeći resampling tehniku u PHP-u. Prvo, definišemo putanju do originalne slike koju želimo smanjiti. Zatim koristimo funkciju imagecreatefromjpeg() da učitamo originalnu sliku u memoriju.
 
 Nakon što dobijemo dimenzije originalne slike pomoću funkcija imagesx() i imagesy(), stvaramo praznu sliku nove veličine koristeći imagecreatetruecolor(). Nakon toga, primjenjujemo funkciju imagecopyresampled() kako bismo smanjili originalnu sliku na zadate dimenzije nove slike, koristeći resampling tehniku. Ova tehnika održava kvalitet slike tokom procesa smanjivanja.
 Da bismo prikazali novu sliku, postavljamo zaglavlje HTTP odgovora na image/jpeg i koristimo funkciju imagejpeg() za ispisivanje nove slike na izlaz. Kao i u prethodnom primjeru, oslobađamo resurse korišćene za rad sa slikama koristeći funkciju imagedestroy().
@@ -50,7 +50,7 @@ Ovaj primjer demonstrira kako prilagoditi veličinu slike u PHP-u koristeći res
 
 4. MODIFIKACIJA POSTOJEĆE SLIKE
 
-Treći primjer u ovom radu (slika 3) prikazuje modifikaciju postojeće slike koristeći nekoliko tehnika. Počinjemo učitavanjem slike iz JPEG formata pomoću funkcije imagecreatefromjpeg(). Zatim, koristimo funkciju imagescale() kako bismo promijenili veličinu slike na željenu vrijednost. U ovom primjeru, nova veličina je postavljena na 500 piksela. Nakon toga, koristimo funkciju imagerotate() kako bismo rotirali sliku za 90 stepeni u smjeru suprotnom od kazaljke na satu. Na kraju, primjenjujemo filter na sliku koristeći funkciju imagefilter(). U ovom slučaju, primjenjujemo crno-bijeli filter kako bismo sliku pretvorili u crno-bijelu verziju.
+Treći primjer u ovom radu (primjer_3) prikazuje modifikaciju postojeće slike koristeći nekoliko tehnika. Počinjemo učitavanjem slike iz JPEG formata pomoću funkcije imagecreatefromjpeg(). Zatim, koristimo funkciju imagescale() kako bismo promijenili veličinu slike na željenu vrijednost. U ovom primjeru, nova veličina je postavljena na 500 piksela. Nakon toga, koristimo funkciju imagerotate() kako bismo rotirali sliku za 90 stepeni u smjeru suprotnom od kazaljke na satu. Na kraju, primjenjujemo filter na sliku koristeći funkciju imagefilter(). U ovom slučaju, primjenjujemo crno-bijeli filter kako bismo sliku pretvorili u crno-bijelu verziju.
 
 Nakon primjene svih ovih transformacija, koristimo funkciju header() za postavljanje zaglavlja HTTP odgovora kako bismo prikazali modifikovanu sliku kao JPEG na web stranici. Konačno, koristimo funkciju imagejpeg() da bismo ispisali modifikovanu sliku na izlaz, nakon čega slijedi imagedrstroy() funkcija, kao i u dosadašnjim primjerima.
 Ovaj primjer demonstrira kako PHP može biti korišten za manipulaciju slikama, uključujući promjenu veličine, rotaciju i primjenu filtera. Kroz ovaj primjer, možemo vidjeti kako PHP pruža moćne funkcionalnosti za modifikaciju slika i otvara vrata kreativnim i interaktivnim mogućnostima u razvoju aplikacija.
@@ -59,7 +59,7 @@ Ovaj primjer demonstrira kako PHP može biti korišten za manipulaciju slikama, 
 
 5. KOMBINOVANJE DVIJE SLIKE
 
-Navedeni primjer (slika 4) pokazuje kombinovanje dvije slike u jednu kolaž sliku. Prvo učitavamo dvije slike koje želimo kombinovati koristeći funkciju imagecreatefromjpeg(). Nakon toga, dobijamo dimenzije obje slike pomoću funkcija imagesx() i imagesy().
+Navedeni primjer (primjer_4) pokazuje kombinovanje dvije slike u jednu kolaž sliku. Prvo učitavamo dvije slike koje želimo kombinovati koristeći funkciju imagecreatefromjpeg(). Nakon toga, dobijamo dimenzije obje slike pomoću funkcija imagesx() i imagesy().
 
 Zatim kreiramo novu praznu sliku za kolaž koristeći funkciju imagecreatetruecolor(). Njene dimenzije se postavljaju tako da su širina jednaka zbiru širina dvije slike, a visina je postavljena na veću visinu od dvije slike.
 Nakon toga, koristimo funkciju imagecopy() kako bismo kopirali prvu sliku na kolaž sliku. Prilikom kopiranja, specificiramo odgovarajuće koordinate i dimenzije. Zatim koristimo istu funkciju imagecopy() da bismo kopirali drugu sliku na kolaž sliku, pri čemu postavljamo koordinate tako da druga slika bude postavljena odmah do prve slike.
@@ -71,7 +71,7 @@ Ovaj primjer ilustruje kako PHP može kombinovati slike kako bi stvorio novu kom
 
 6. PRIKAZIVANJE SLIKA IZ TRENUTNOG DIREKTORIJUMA	
 
-Peti primjer u ovom radu prikazuje kako PHP može prikazati sve PNG, JPG i WEBP slike iz trenutnog direktorijuma na web stranici. Prvo, koristimo funkciju glob() koja pronalazi sve slike u trenutnom direktorijumu sa odgovarajućim ekstenzijama (.png, .jpg i .webp). Koristimo petlju foreach() da bismo prošli kroz sve pronađene slike.
+Peti primjer u ovom radu (primjer_5) prikazuje kako PHP može prikazati sve PNG, JPG i WEBP slike iz trenutnog direktorijuma na web stranici. Prvo, koristimo funkciju glob() koja pronalazi sve slike u trenutnom direktorijumu sa odgovarajućim ekstenzijama (.png, .jpg i .webp). Koristimo petlju foreach() da bismo prošli kroz sve pronađene slike.
 Slika 5: Prikazivanje slika iz trenutnog direktorijuma
 Unutar petlje, prikazujemo naziv svake slike koristeći element $filename i dodajemo HTML oznake <p> kako bismo stvorili paragraf sa nazivom slike. Zatim koristimo element $filename u atributu src kako bismo postavili putanju slike, tako da se slika prikazuje na web stranici. Nakon prikaza slike, dodajemo prazne linije kako bismo stvorili razmak između slika.
 Ovaj primjer ilustruje kako PHP može dinamički prikazivati slike na web stranici. Koristeći funkciju glob(), možemo pronaći i prikazati slike sa određenim ekstenzijama, što omogućava fleksibilnost u upravljanju slikama na web stranicama. Ovo je korisno kada želimo prikazati galeriju slika, generisati izveštaje sa slikama ili prikazivati vizuelne elemente koji se mogu mijenjati dinamički.
